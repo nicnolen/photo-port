@@ -1,7 +1,7 @@
 import React from 'react';
 import About from './components/About';
 
-function App() {
+const App = () => {
   return (
     <div>
       <main>
@@ -9,6 +9,6 @@ function App() {
       </main>
     </div>
   );
-}
+};
 
 export default App;

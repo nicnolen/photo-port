@@ -1,11 +1,19 @@
 // Import React
 import React from 'react';
+// Import cover image
+import coverImage from '../../assets/cover/cover-image.jpg';
 
 // Create the `About` function
 const About = () => {
   return (
-    <section>
+    <section className='my-5'>
       <h1 id='about'>Who am I?</h1>
+      <img
+        src={coverImage}
+        className='my-2'
+        style={{ width: '100%' }}
+        alt='cover'
+      />
     </section>
   );
 };
