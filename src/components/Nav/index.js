@@ -2,7 +2,7 @@
 import React from 'react';
 import { capitalizeFirstLetter } from '../../utils/helpers';
 
-// Create the `Nav` component
+// Create the `Nav` function
 const Nav = () => {
   const categories = [
     {
