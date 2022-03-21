@@ -1,15 +1,19 @@
 // Import dependencies
-import React from 'react';
+import React, { useEffect } from 'react';
 import { capitalizeFirstLetter } from '../../utils/helpers';
 
 // Create the `Nav` function
-const Nav = props => {
+function Nav(props) {
   const { categories = [], setCurrentCategory, currentCategory } = props;
 
   const categorySelected = name => {
     console.info(`${name} selected`);
     return name;
   };
+
+  useEffect(() => {
+    document.title = capitalizeFirstLetter(currentCategory.name);
+  }, [currentCategory]);
 
   return (
     <header className='flex-row px-1'>
@@ -55,7 +59,7 @@ const Nav = props => {
       </nav>
     </header>
   );
-};
+}
 
 // Export the module
 export default Nav;

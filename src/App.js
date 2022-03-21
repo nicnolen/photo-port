@@ -3,7 +3,7 @@ import Nav from './components/Nav';
 import About from './components/About';
 import Gallery from './components/Gallery';
 
-const App = () => {
+function App() {
   const [categories] = useState([
     {
       name: 'commercial',
@@ -27,11 +27,13 @@ const App = () => {
         setCurrentCategory={setCurrentCategory}
         currentCategory={currentCategory}></Nav>
       <main>
-        <Gallery></Gallery>
-        <About></About>
+        <div>
+          <Gallery></Gallery>
+          <About></About>
+        </div>
       </main>
     </div>
   );
-};
+}
 
 export default App;
