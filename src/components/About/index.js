@@ -1,6 +1,5 @@
-// Import React
+// Import dependencies
 import React from 'react';
-// Import cover image
 import coverImage from '../../assets/cover/cover-image.jpg';
 
 // Create the `About` function
