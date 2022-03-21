@@ -32,3 +32,12 @@ describe('emoji is visible', () => {
     expect(getByLabelText('camera')).toHaveTextContent('📸'); // test emoji's accessibility features by querying the element by its `aria-label`
   })
 })
+
+// Check to see if some of the links are visible
+describe('links are visible', () => {
+  it('inserts text into the links', () => {
+    // Arrange
+
+    // Assert
+  })
+})
