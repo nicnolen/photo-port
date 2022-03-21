@@ -17,8 +17,8 @@ const Nav = () => {
     },
   ];
 
-  const categorySelected = () => {
-    console.log('hello');
+  const categorySelected = name => {
+    console.info(`${name} selected`);
   };
 
   return (
@@ -42,7 +42,9 @@ const Nav = () => {
           {categories.map(category => (
             // whenever you map over anything in JSX the outmost element must have a key attribute set to something unique
             <li className='mx-1' key={category.name}>
-              <span onClick={categorySelected}>{category.name}</span>
+              <span onClick={() => categorySelected(category.name)}>
+                {category.name}
+              </span>
             </li>
           ))}
         </ul>
