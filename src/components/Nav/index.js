@@ -1,5 +1,6 @@
 // Import React
 import React from 'react';
+import { capitalizeFirstLetter } from '../../utils/helpers';
 
 // Create the `Nav` component
 const Nav = () => {
@@ -43,7 +44,7 @@ const Nav = () => {
             // whenever you map over anything in JSX the outmost element must have a key attribute set to something unique
             <li className='mx-1' key={category.name}>
               <span onClick={() => categorySelected(category.name)}>
-                {category.name}
+                {capitalizeFirstLetter(category.name)}
               </span>
             </li>
           ))}
