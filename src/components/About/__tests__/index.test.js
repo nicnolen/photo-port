@@ -9,5 +9,10 @@ afterEach(cleanup);
 
 // Declare the components you are testing
 describe('About component', () => {
-  // render About test
+  // First Test: verify the component is rendering
+  it('renders', () => {
+    render(<About />);
+  });
+
+  // Second Test
 })
