@@ -25,7 +25,10 @@ describe('Nav component', () => {
 // Test if the camera emoji is visible
 describe('emoji is visible', () => {
   it('inserts emoji into the h2', () => {
-    // Arrange
-    // Assert
+    // Arrange the parts of the component we need to access
+    const { getByLabelText } = render(<Nav />);
+
+    // Assert using a custom matcher to compare the expected value to the one recieved by query
+    expect(getByLabelText('camera')).toHaveTextContent('📸'); // test emoji's accessibility features by querying the element by its `aria-label`
   })
 })
