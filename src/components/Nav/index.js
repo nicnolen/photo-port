@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 import { capitalizeFirstLetter } from '../../utils/helpers';
 
 // Create the `Nav` function
-function Nav(props) {
+const Nav = props => {
   const { categories = [], setCurrentCategory, currentCategory } = props;
 
   const categorySelected = name => {
@@ -59,7 +59,7 @@ function Nav(props) {
       </nav>
     </header>
   );
-}
+};
 
 // Export the module
 export default Nav;
