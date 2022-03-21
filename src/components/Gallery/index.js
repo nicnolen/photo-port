@@ -5,11 +5,7 @@ import photo from '../../assets/small/commercial/0.jpg';
 
 // Create the `Gallery` function
 const Gallery = props => {
-  const currentCategory = {
-    name: 'commercial',
-    description:
-      'Photos of grocery stores, food trucks, and other commercial projects',
-  };
+  const { currentCategory } = props;
 
   return (
     <section>
