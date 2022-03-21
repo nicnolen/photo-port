@@ -21,3 +21,11 @@ describe('Nav component', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 });
+
+// Test if the camera emoji is visible
+describe('emoji is visible', () => {
+  it('inserts emoji into the h2', () => {
+    // Arrange
+    // Assert
+  })
+})
