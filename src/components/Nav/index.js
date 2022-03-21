@@ -1,4 +1,4 @@
-// Import React
+// Import dependencies
 import React from 'react';
 import { capitalizeFirstLetter } from '../../utils/helpers';
 
@@ -25,7 +25,7 @@ const Nav = () => {
   return (
     <header className='flex-row px-1'>
       <h2>
-        <a href='/'>
+        <a data-testid='link' href='/'>
           <span role='img' aria-label='camera'>
             📸
           </span>
@@ -35,12 +35,17 @@ const Nav = () => {
       <nav>
         <ul className='flex-row'>
           <li className='mx-2'>
-            <a href='#about' onClick={() => console.info('About Me selected')}>
-              About me
+            <a
+              data-testid='about'
+              href='#about'
+              onClick={() => console.info('About Me selected')}>
+              About Me
             </a>
           </li>
           <li className={'mx-2'}>
-            <span onClick={() => console.info('Contact selected')}>Contact</span>
+            <span onClick={() => console.info('Contact selected')}>
+              Contact
+            </span>
           </li>
           {categories.map(category => (
             // whenever you map over anything in JSX the outmost element must have a key attribute set to something unique
