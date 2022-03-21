@@ -10,6 +10,9 @@ afterEach(cleanup);
 // Declare the components you are testing
 describe('Nav component', () => {
   // baseline test
-
+  it('renders', () => {
+    render(<Nav />);
+  });
+  
   // snapshot test
 })
