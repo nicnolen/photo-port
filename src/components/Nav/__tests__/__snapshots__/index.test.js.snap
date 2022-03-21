@@ -7,6 +7,7 @@ exports[`Nav component matches snapshot 1`] = `
   >
     <h2>
       <a
+        data-testid="link"
         href="/"
       >
         <span
@@ -26,9 +27,10 @@ exports[`Nav component matches snapshot 1`] = `
           class="mx-2"
         >
           <a
+            data-testid="about"
             href="#about"
           >
-            About me
+            About Me
           </a>
         </li>
         <li

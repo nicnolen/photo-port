@@ -1,3 +1,4 @@
+/* eslint-disable */
 // Import dependencies
 import React from 'react';
 import { render, cleanup } from '@testing-library/react';
@@ -30,14 +31,17 @@ describe('emoji is visible', () => {
 
     // Assert using a custom matcher to compare the expected value to the one recieved by query
     expect(getByLabelText('camera')).toHaveTextContent('📸'); // test emoji's accessibility features by querying the element by its `aria-label`
-  })
-})
+  });
+});
 
 // Check to see if some of the links are visible
 describe('links are visible', () => {
   it('inserts text into the links', () => {
     // Arrange
+    const { getByTestId } = render(<Nav />);
 
     // Assert
-  })
-})
+    expect(getByTestId('link')).toHaveTextContent('Oh Snap!');
+    expect(getByTestId('about')).toHaveTextContent('About Me');
+  });
+});
