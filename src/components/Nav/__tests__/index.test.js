@@ -13,6 +13,11 @@ describe('Nav component', () => {
   it('renders', () => {
     render(<Nav />);
   });
-  
+
   // snapshot test
-})
+  it('matches snapshot', () => {
+    const { asFragment } = render(<Nav />);
+    // assert value comparison
+    expect(asFragment()).toMatchSnapshot();
+  });
+});
