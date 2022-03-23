@@ -15,10 +15,14 @@ function ContactForm() {
     setFormState({ ...formState, [e.target.name]: e.target.value });
   };
 
+  const handleSubmit = e => {
+    e.preventDefault();
+  };
+
   return (
     <section>
       <h1>Contact me</h1>
-      <form id='contact-form'>
+      <form id='contact-form' onSubmit={handleSubmit}>
         <div>
           <label htmlFor='name'>Name:</label>
           <input
