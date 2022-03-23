@@ -10,8 +10,13 @@ afterEach(cleanup);
 // Declare the components you are testing
 describe('ContactForm component', () => {
   // verify the component is rendering properly
-  it('renders', () => {
+  it('Contact component renders', () => {
     render(<Contact />);
+  });
+
+  it('h1 tag renders', () => {
+    const { getByTestId } = render(<Contact />);
+    expect(getByTestId('h1tag')).toHaveTextContent('Contact me'); // eslint-disable-line
   });
 
   // compare snapshot versions of the DOM node structure

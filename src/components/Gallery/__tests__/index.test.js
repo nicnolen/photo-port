@@ -1,4 +1,3 @@
-/* eslint-disable */
 // Import dependencies
 import React from 'react';
 import { render, cleanup } from '@testing-library/react';
@@ -19,7 +18,7 @@ describe('Gallery is rendering', () => {
   // baseline test
   it('renders', () => {
     const { getByTestId } = render(<Gallery currentCategory={portrait} />);
-    expect(getByTestId('h1tag')).toHaveTextContent('Portraits');
+    expect(getByTestId('h1tag')).toHaveTextContent('Portraits'); // eslint-disable-line 
   });
 
   // snapshot test
