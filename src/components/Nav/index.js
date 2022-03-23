@@ -4,7 +4,13 @@ import { capitalizeFirstLetter } from '../../utils/helpers';
 
 // Create the `Nav` function
 function Nav(props) {
-  const { categories = [], setCurrentCategory, currentCategory } = props;
+  const {
+    categories = [],
+    setCurrentCategory,
+    currentCategory,
+    contactSelected,
+    setContactSelected,
+  } = props;
 
   const categorySelected = name => {
     console.info(`${name} selected`);
@@ -32,12 +38,21 @@ function Nav(props) {
             <a
               data-testid='about'
               href='#about'
-              onClick={() => categorySelected('About Me')}>
+              onClick={() => {
+                categorySelected('About Me');
+                setContactSelected(false);
+              }}>
               About Me
             </a>
           </li>
           <li className={'mx-2'}>
-            <span onClick={() => categorySelected('Contact')}>Contact</span>
+            <span
+              onClick={() => {
+                categorySelected('Contact');
+                setContactSelected(true);
+              }}>
+              Contact
+            </span>
           </li>
           {categories.map(category => (
             // whenever you map over anything in JSX the outmost element must have a key attribute set to something unique
@@ -50,6 +65,7 @@ function Nav(props) {
                 onClick={() => {
                   setCurrentCategory(category);
                   categorySelected(category.name);
+                  setContactSelected(false);
                 }}>
                 {capitalizeFirstLetter(category.name)}
               </span>
@@ -59,7 +75,7 @@ function Nav(props) {
       </nav>
     </header>
   );
-};
+}
 
 // Export the module
 export default Nav;
