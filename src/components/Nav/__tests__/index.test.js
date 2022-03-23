@@ -11,6 +11,8 @@ const categories = [
 ];
 const mockCurrentCategory = jest.fn();
 const mockSetCurrentCategory = jest.fn();
+const mockContactSelected = jest.fn();
+const mockSetContactSelected = jest.fn();
 
 // After each test, make sure there isnt any leftover memory that could give you false results
 afterEach(cleanup);
