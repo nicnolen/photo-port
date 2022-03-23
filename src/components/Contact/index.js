@@ -24,23 +24,28 @@ function ContactForm() {
         setErrorMessage('');
       }
     } else {
-      // error message for message and name form elements
+      // error message for blank form elements
       if (!e.target.value.length) {
         setErrorMessage(`${e.target.name} is required.`);
-        console.info(`${e.target.name} is required.`);
       } else {
         setErrorMessage('');
       }
+    }
+    // if there are  no error messages
+    if (!errorMessage) {
+      // update the formState value for the name property
+      setFormState({ ...formState, [e.target.name]: e.target.value });
     }
   };
 
   const handleSubmit = e => {
     e.preventDefault();
-    // if there are  no error messages
     if (!errorMessage) {
-      // update the formState value for the name property
-      setFormState({ ...formState, [e.target.name]: e.target.value });
       console.info('Form', formState);
+      return true;
+    } else {
+      console.error(errorMessage);
+      return false;
     }
   };
 
@@ -55,6 +60,7 @@ function ContactForm() {
             name='name'
             defaultValue={name}
             onBlur={handleChange}
+            autoFocus
           />
         </div>
         <div>
