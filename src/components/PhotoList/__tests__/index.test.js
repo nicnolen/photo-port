@@ -10,7 +10,7 @@ afterEach(cleanup);
 // Declare the components you are testing
 describe('PhotoList is rendering', () => {
   // baseline test
-  it('renders', () => {
+  it('Photolist renders', () => {
     render(<PhotoList />);
   });
 
