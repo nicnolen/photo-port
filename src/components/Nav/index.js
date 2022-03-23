@@ -45,7 +45,7 @@ function Nav(props) {
               About Me
             </a>
           </li>
-          <li className={'mx-2'}>
+          <li className={`mx-2 ${contactSelected && 'navActive'}`}>
             <span
               onClick={() => {
                 categorySelected('Contact');
@@ -58,7 +58,9 @@ function Nav(props) {
             // whenever you map over anything in JSX the outmost element must have a key attribute set to something unique
             <li
               className={`mx-1 ${
-                currentCategory.name === category.name && 'navActive'
+                currentCategory.name === category.name &&
+                !contactSelected &&
+                'navActive'
               }`}
               key={category.name}>
               <span
