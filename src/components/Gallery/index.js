@@ -4,7 +4,7 @@ import PhotoList from '../PhotoList';
 import { capitalizeFirstLetter } from '../../utils/helpers';
 
 // Create the `Gallery` function
-const Gallery = ({ currentCategory }) => {
+function Gallery({ currentCategory }) {
   const { name, description } = currentCategory;
 
   return (
