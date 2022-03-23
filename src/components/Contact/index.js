@@ -31,7 +31,7 @@ function ContactForm() {
       } else {
         setErrorMessage('');
       }
-    }   
+    }
   };
 
   const handleSubmit = e => {
@@ -39,8 +39,8 @@ function ContactForm() {
     // if there are  no error messages
     if (!errorMessage) {
       // update the formState value for the name property
-      setFormState({...formState, [e.target.name]: e.target.value });
-      console.info('Form', formState)
+      setFormState({ ...formState, [e.target.name]: e.target.value });
+      console.info('Form', formState);
     }
   };
 
@@ -54,7 +54,7 @@ function ContactForm() {
             type='text'
             name='name'
             defaultValue={name}
-            onChange={handleChange}
+            onBlur={handleChange}
           />
         </div>
         <div>
@@ -63,7 +63,7 @@ function ContactForm() {
             type='email'
             name='email'
             defaultValue={email}
-            onChange={handleChange}
+            onBlur={handleChange}
           />
         </div>
         <div>
@@ -72,8 +72,13 @@ function ContactForm() {
             name='message'
             rows='5'
             defaultValue={message}
-            onChange={handleChange}
+            onBlur={handleChange}
           />
+          {errorMessage && (
+            <div>
+              <p className='error-text'>{errorMessage}</p>
+            </div>
+          )}
         </div>
         <button type='submit'>Submit</button>
       </form>
