@@ -20,7 +20,7 @@ afterEach(cleanup);
 // Declare the components you are testing
 describe('Nav component', () => {
   // baseline test
-  it('renders', () => {
+  it('Nav component renders', () => {
     render(
       <Nav
         categories={categories}

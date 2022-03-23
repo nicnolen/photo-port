@@ -14,7 +14,7 @@ describe('ContactForm component', () => {
     render(<Contact />);
   });
 
-  it('h1 tag renders', () => {
+  it('testId renders', () => {
     const { getByTestId } = render(<Contact />);
     expect(getByTestId('h1tag')).toHaveTextContent('Contact me'); // eslint-disable-line
   });

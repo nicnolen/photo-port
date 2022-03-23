@@ -16,7 +16,11 @@ afterEach(cleanup);
 // Declare the components you are testing
 describe('Gallery is rendering', () => {
   // baseline test
-  it('renders', () => {
+  it('Gallary component renders', () => {
+    render(<Gallery currentCategory={portrait} />);
+  });
+
+  it('testId renders', () => {
     const { getByTestId } = render(<Gallery currentCategory={portrait} />);
     expect(getByTestId('h1tag')).toHaveTextContent('Portraits'); // eslint-disable-line 
   });
