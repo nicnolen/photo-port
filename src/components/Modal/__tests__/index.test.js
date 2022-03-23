@@ -2,8 +2,7 @@
 import React from 'react';
 import { render, cleanup } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
-import Contact from '..';
-import { Modal } from 'bootstrap';
+import Modal from '..';
 
 // Mock the toggleModal function
 const mockToggleModal = jest.fn();
@@ -25,8 +24,19 @@ describe('Modal component', () => {
   // baseline render component test
   it('renders', () => {
     render(<Modal onClose={mockToggleModal} currentPhoto={currentPhoto} />);
-
   });
 
   // snapshot test
+  it('matches snapshot DOM node structure', () => {
+    const { asFragment } = render(
+      <Modal
+        // Arrange the snapshot - declare variables
+        onClose={mockToggleModal}
+        currentPhoto={currentPhoto}
+      />
+    );
+
+    // Assert the match
+    expect(asFragment()).toMatchSnapshot();
+  });
 });
