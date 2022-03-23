@@ -1,5 +1,6 @@
 // Import dependencies
 import React, { useState } from 'react';
+import { validateEmail } from '../../utils/helpers';
 
 // Make component function
 function ContactForm() {
@@ -8,15 +9,39 @@ function ContactForm() {
     email: '',
     message: '',
   });
+
+  const [errorMessage, setErrorMessage] = useState('');
   const { name, email, message } = formState;
 
   const handleChange = e => {
-    // update the formState value for the name property
-    setFormState({ ...formState, [e.target.name]: e.target.value });
+    // validate email
+    if (e.target.name === 'email') {
+      const isValid = validateEmail(e.target.value);
+      // isValid conditional statement
+      if (!isValid) {
+        setErrorMessage('Invalid email format!');
+      } else {
+        setErrorMessage('');
+      }
+    } else {
+      // error message for message and name form elements
+      if (!e.target.value.length) {
+        setErrorMessage(`${e.target.name} is required.`);
+        console.info(`${e.target.name} is required.`);
+      } else {
+        setErrorMessage('');
+      }
+    }   
   };
 
   const handleSubmit = e => {
     e.preventDefault();
+    // if there are  no error messages
+    if (!errorMessage) {
+      // update the formState value for the name property
+      setFormState({...formState, [e.target.name]: e.target.value });
+      console.info('Form', formState)
+    }
   };
 
   return (
